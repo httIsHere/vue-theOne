@@ -5,6 +5,11 @@ import App from './App'
 import router from './router'
 
 import iView from 'iview'
+import * as filters from './filter'
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.config.productionTip = false
 
@@ -15,6 +20,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'，
+  template: '<App/>',
   router
 })
